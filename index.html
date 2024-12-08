@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate Bangladesh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="bg-[#f9f7f3] px-24 py-5 sticky top-0">
+      <nav class="flex justify-between items-center">
+        <a href="" class="px-8 py-3 rounded-lg bg-[#B4F461]">Blog</a>
+        <a href="" id="logo" class="flex items-center gap-3">
+          <img src="./assets/logo.png" alt="" class="w-" />
+          <span>Donate Bangladesh</span>
+        </a>
+        <h5 class="flex items-center gap-2">
+          <img src="./assets/coin.png" alt="" />
+          <span id="total_amount">5500</span>
+          <span>BDT</span>
+        </h5>
+      </nav>
+
+      <div class="flex justify-center gap-3 mt-24">
+        <button id="donation_btn" class="px-8 py-3 rounded-lg bg-[#B4F461]">
+          Donation
+        </button>
+        <button
+          id="history_btn"
+          class="px-8 py-3 rounded-lg border border-gray-500 text-[#111111b3]"
+        >
+          History
+        </button>
+      </div>
+    </header>
+
+    <main class="bg-[#f9f7f3] px-24 py-5">
+      <section id="donation">
+        <div class="flex items-center gap-10 bg-white rounded-2xl p-5 my-5">
+          <img
+            src="./assets/noakhali.png"
+            alt=""
+            class="w-96 h-96 object-contain rounded-xl"
+          />
+          <div class="flex flex-col items-start gap-4">
+            <div class="flex gap-2 items-center bg-slate-100 rounded-md p-2">
+              <img src="./assets/coin.png" alt="" />
+              <span id="noakhali_donation_amount">0</span>
+              <span>BDT</span>
+            </div>
+            <h4 class="font-bold text-lg">
+              Donate for Flood at Noakhali, Bangladesh
+            </h4>
+            <p class="text-sm font-light text-justify">
+              The recent floods in Noakhali have caused significant damage to
+              homes infrastructure. Your donation will help provide essential
+              supplies and to those affected by this disaster. Every
+              contribution, big or small, makes difference. Please join us in
+              supporting the relief efforts and making a positive impact on the
+              lives of those in need.
+            </p>
+            <form class="w-full flex flex-col gap-4 mt-3">
+              <input
+                id="noakhali_donation_input"
+                type="text"
+                placeholder="Write donation amount....."
+                class="block w-full rounded-md p-2 border border-gray-300 focus:border-[#B4F461] outline-none"
+              />
+              <button
+                id="noakhali_donation_btn"
+                class="block w-full rounded-md bg-[#B4F461] text-center p-2"
+              >
+                Donate Now
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="flex items-center gap-12 bg-white rounded-2xl p-5 my-5">
+          <img
+            src="./assets/quota-protest.png"
+            alt=""
+            class="h-96 w-96 object-contain rounded-xl"
+          />
+          <div class="flex flex-col items-start gap-4">
+            <div class="flex gap-2 items-center bg-slate-100 rounded-md p-2">
+              <img src="./assets/coin.png" alt="" />
+              <span id="protest_donation_amount">0</span>
+              <span>BDT</span>
+            </div>
+            <h4 class="font-bold text-lg">
+              Aid for Injured in the Quota Movement
+            </h4>
+            <p class="text-sm font-light text-justify">
+              The recent Quota movement has resulted in numerous injuries and
+              significant hardship for many individuals. Your support is crucial
+              in providing medical assistance, rehabilitation, and necessary
+              supplies to those affected. By contributing, you help ensure that
+              injured individuals receive the care and support they need during
+              this challenging time. Every donation plays a vital role in
+              alleviating their suffering and aiding in their recovery. Please
+              consider making a donation to support these brave individuals in
+              their time of need.
+            </p>
+            <form class="w-full flex flex-col gap-4 mt-3">
+              <input
+                id="protest_donation_input"
+                type="text"
+                placeholder="Write donation amount....."
+                class="block w-full rounded-md p-2 border border-gray-300 focus:border-[#B4F461] outline-none"
+              />
+              <button
+                id="protest_donation_btn"
+                class="block w-full rounded-md bg-[#B4F461] text-center p-2"
+              >
+                Donate Now
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="flex items-center gap-12 bg-white rounded-2xl p-5 my-5">
+          <img
+            src="./assets/feni.png"
+            alt=""
+            class="h-96 w-96 object-contain rounded-xl"
+          />
+          <div class="flex flex-col items-start gap-4">
+            <div class="flex gap-2 items-center bg-slate-100 rounded-md p-2">
+              <img src="./assets/coin.png" alt="" />
+              <span id="feni_donation_amount">0</span>
+              <span>BDT</span>
+            </div>
+            <h4 class="font-bold text-lg">
+              Donate for Flood Relief in Feni,Bangladesh
+            </h4>
+            <p class="text-sm font-light text-justify">
+              The recent floods in Feni have devastated local communities,
+              leading to severe disruption and loss. Your generous donation will
+              help provide immediate aid, including food, clean water, and
+              medical supplies, to those affected by this calamity. Together, we
+              can offer crucial support and help rebuild lives in the aftermath
+              of this disaster. Every contribution counts towards making a real
+              difference. Please consider donating today to assist those in
+              urgent need.
+            </p>
+            <form class="w-full flex flex-col gap-4 mt-3">
+              <input
+              id="feni_donation_input"
+                type="text"
+                placeholder="Write donation amount....."
+                class="block w-full rounded-md p-2 border border-gray-300 focus:border-[#B4F461] outline-none"
+              />
+              <button
+                id="feni_donation_btn"
+                class="block w-full rounded-md bg-[#B4F461] text-center p-2"
+              >
+                Donate Now
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section id="history" class="hidden">
+        <h1>History</h1>
+      </section>
+    </main>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
