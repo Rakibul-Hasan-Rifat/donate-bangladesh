@@ -19,25 +19,41 @@ document
   .getElementById("noakhali_donation_btn")
   .addEventListener("click", function (e) {
     e.preventDefault();
-    donate("noakhali_donation_input", "noakhali_donation_amount");
+    donate(
+      "noakhali_donation_input",
+      "noakhali_donation_amount",
+      "noakhali_donation_title"
+    );
   });
 
 document
   .getElementById("feni_donation_btn")
   .addEventListener("click", function (e) {
     e.preventDefault();
-    donate("feni_donation_input", "feni_donation_amount");
+    donate(
+      "feni_donation_input",
+      "feni_donation_amount",
+      "feni_donation_title"
+    );
   });
 
 document
   .getElementById("protest_donation_btn")
   .addEventListener("click", function (e) {
     e.preventDefault();
-    donate("protest_donation_input", "protest_donation_amount");
+    donate(
+      "protest_donation_input",
+      "protest_donation_amount",
+      "protest_donation_title"
+    );
   });
 
-function donate(donationInputID, previousDonationID) {
+  
+let historyOfDonation = [];
+
+function donate(donationInputID, previousDonationID, donationTitleID) {
   const donationInputElement = document.getElementById(donationInputID);
+  const donationTitleElement = document.getElementById(donationTitleID);
   const previousDonationElement = document.getElementById(previousDonationID);
 
   const userTotalAmount = parseInt(
@@ -49,6 +65,22 @@ function donate(donationInputID, previousDonationID) {
   previousDonationElement.innerText = prevDonationAmount + donationInputAmount;
   document.getElementById("total_amount").innerText =
     userTotalAmount - donationInputAmount;
+
+  const donationInfo = {
+    dateOfDonation: new Date(),
+    totalDonation: prevDonationAmount + donationInputAmount,
+    donationPurpose: donationTitleElement.innerText,
+  };
+
+  historyOfDonation.length > 0 &&
+    historyOfDonation.forEach(function (info, i) {
+      console.log(info.donationPurpose, donationTitleElement.innerText);
+      if (info.donationPurpose === donationTitleElement.innerText) {
+        historyOfDonation.splice(i, 1);
+      }
+    });
+
+  historyOfDonation.push(donationInfo);
 
   donationInputElement.value = "";
 }
