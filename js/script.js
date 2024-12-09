@@ -48,7 +48,6 @@ document
     );
   });
 
-  
 let historyOfDonation = [];
 
 function donate(donationInputID, previousDonationID, donationTitleID) {
@@ -61,6 +60,16 @@ function donate(donationInputID, previousDonationID, donationTitleID) {
   );
   const donationInputAmount = parseInt(donationInputElement.value);
   const prevDonationAmount = parseInt(previousDonationElement.innerText);
+
+  if (
+    donationInputAmount < 0 ||
+    donationInputAmount > userTotalAmount ||
+    typeof donationInputAmount !== "number" ||
+    isNaN(donationInputAmount)
+  ) {
+    alert('Invalid Input')
+    return;
+  }
 
   previousDonationElement.innerText = prevDonationAmount + donationInputAmount;
   document.getElementById("total_amount").innerText =
@@ -82,28 +91,36 @@ function donate(donationInputID, previousDonationID, donationTitleID) {
 
   historyOfDonation.push(donationInfo);
 
+  Swal.fire({
+    position: "top-center",
+    icon: "success",
+    title: "Your amount is successfully donated!",
+    showConfirmButton: false,
+    timer: 1500,
+  });
   donationInputElement.value = "";
-  historySectionMaker()
+  historySectionMaker();
 }
 
 function historySectionMaker() {
   const historyElement = document.getElementById("history");
-  historyElement.innerHTML = '';
+  historyElement.innerHTML = "";
   historyOfDonation.forEach(function (history) {
-    
     let div = document.createElement("div");
-    div.className = 'bg-white rounded-lg p-4 my-5'
+    div.className = "bg-white rounded-lg p-4 my-5";
 
     const h4 = document.createElement("h4");
     h4.className = "font-bold text-lg";
     h4.innerText =
       history.totalDonation + " " + "Taka is for " + history.donationPurpose;
-    
+
     const p = document.createElement("p");
     p.className = "text-sm font-light light-gray-300";
     p.innerText = "Date: " + history.dateOfDonation;
 
     div.append(h4, p);
-    historyOfDonation.length > 1 ? historyElement.appendChild(div) : historyElement.replaceChildren(div);
+    historyOfDonation.length > 1
+      ? historyElement.appendChild(div)
+      : historyElement.replaceChildren(div);
   });
 }
