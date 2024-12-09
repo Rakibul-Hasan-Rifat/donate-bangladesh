@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate Bangladesh</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.19/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="bg-[#f9f7f3] px-4 md:px-24 py-5 sticky top-0">
+      <nav class="flex flex-col md:flex-row gap-4 justify-between items-center">
+        <a href="/" class="px-8 py-3 rounded-lg bg-[#B4F461] text-black">Home</a>
+        <a href="" id="logo" class="flex items-center gap-3 text-black">
+          <img src="./assets/logo.png" alt="" class="w-" />
+          <span>Donate Bangladesh</span>
+        </a>
+        <h5 class="flex items-center gap-2 text-black">
+          <img src="./assets/coin.png" alt="" />
+          <span id="total_amount">5500</span>
+          <span>BDT</span>
+        </h5>
+      </nav>
+
+      
+    </header>
+
+    <main class="bg-[#f9f7f3] px-4 md:px-24 py-5">
+      <div class="collapse collapse-plus bg-base-200 mb-2">
+        <input type="radio" name="my-accordion-3" checked="checked" />
+        <div class="collapse-title text-xl font-medium">
+          What is the Document Object Model (DOM)?
+        </div>
+        <div class="collapse-content">
+          <p class="text-justify">
+            The Document Object Model (DOM) is a programming interface for web
+            documents. It represents the structure of a document as a tree of
+            objects, where each object corresponds to a part of the document,
+            such as an element, attribute, or text. This allows programming
+            languages like JavaScript to interact with and manipulate the
+            content, structure, and style of web pages dynamically. <br />
+
+            Here's a simple breakdown: <br />
+
+            Document: The entire HTML or XML document. <br />
+
+            Object: Each part of the document (elements, attributes, text) is
+            represented as an object. <br />
+
+            Model: The document is modeled as a tree structure, where each node
+            is an object. <br />
+
+            For example, in an HTML document, the &lt;body&gt; tag and its
+            contents are represented as objects that can be accessed and
+            manipulated using the DOM. This enables developers to create
+            interactive and dynamic web pages by adding, removing, or modifying
+            elements and their attributes.
+          </p>
+        </div>
+      </div>
+      <div class="collapse collapse-plus bg-base-200 mt-2">
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title text-xl font-medium">
+          How do you select an element from the DOM?
+        </div>
+        <div class="collapse-content">
+          <p>
+            Selecting an element from the DOM can be done using various methods
+            in JavaScript. Here are some common ways: <br />
+            1. getElementById: Selects an element by its ID. <br />
+            2. getElementsByClassName: Selects all elements with a specific
+            class name. <br />
+            3. getElementsByTagName: Selects all elements with a specific tag
+            name. <br />
+            4. querySelector: Selects the first element that matches a CSS
+            selector. <br />
+            5. querySelectorAll: Selects all elements that match a CSS selector.
+            <br />
+            <br />
+            These methods allow you to interact with and manipulate elements on
+            your web page dynamically.
+          </p>
+        </div>
+      </div>
+      <div class="collapse collapse-plus bg-base-200 mt-2">
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title text-xl font-medium">
+          What is event delegation in the context of the DOM, and why is it
+          useful?
+        </div>
+        <div class="collapse-content">
+          <p class="text-justify">
+            Event delegation is a technique in the DOM that allows you to handle
+            events at a higher level in the DOM tree rather than attaching event
+            listeners to individual elements. This is particularly useful when
+            you have many elements that need to respond to the same event, or
+            when elements are dynamically added to the DOM. <br />
+            <br />
+
+            <strong>How It Works: </strong> <br />
+            1. Event Bubbling: When an event occurs on an element, it first runs
+            the handlers on that element, then on its parent, and so on up the
+            DOM tree. This is known as event bubbling. <br />
+            2. Single Event Listener: Instead of adding an event listener to
+            each child element, you add a single event listener to a common
+            ancestor. This ancestor can then handle events for all its
+            descendants. <br />
+          </p>
+        </div>
+      </div>
+      <div class="collapse collapse-plus bg-base-200 mt-2">
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title text-xl font-medium">
+          How do you manipulate an element's attributes and styles using the
+          DOM?
+        </div>
+        <div class="collapse-content">
+          <p class="text-justify">
+            Manipulating an element's attributes and styles using the DOM can be done easily with JavaScript. Here are some common methods: <br> <br>
+            <strong>Manipulating Attributes</strong> <br>
+            1. getAttribute: Retrieves the value of an attribute. <br>
+            2. setAttribute: Sets the value of an attribute. <br>
+            3. removeAttribute: Removes an attribute. <br> <br>
+
+            <strong>Manipulating Styles</strong> <br>
+            1. Directly Setting Styles: You can directly set styles using the style property. <br>
+            2. Using classList: Add, remove, or toggle classes to change styles. <br>
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
