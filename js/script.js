@@ -83,4 +83,27 @@ function donate(donationInputID, previousDonationID, donationTitleID) {
   historyOfDonation.push(donationInfo);
 
   donationInputElement.value = "";
+  historySectionMaker()
+}
+
+function historySectionMaker() {
+  const historyElement = document.getElementById("history");
+  historyElement.innerHTML = '';
+  historyOfDonation.forEach(function (history) {
+    
+    let div = document.createElement("div");
+    div.className = 'bg-white rounded-lg p-4 my-5'
+
+    const h4 = document.createElement("h4");
+    h4.className = "font-bold text-lg";
+    h4.innerText =
+      history.totalDonation + " " + "Taka is for " + history.donationPurpose;
+    
+    const p = document.createElement("p");
+    p.className = "text-sm font-light light-gray-300";
+    p.innerText = "Date: " + history.dateOfDonation;
+
+    div.append(h4, p);
+    historyOfDonation.length > 1 ? historyElement.appendChild(div) : historyElement.replaceChildren(div);
+  });
 }
